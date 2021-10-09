@@ -6,6 +6,7 @@ import javax.servlet.jsp.*;
 import Modelo.Cliente;
 import java.util.ArrayList;
 import Control.AdmClientes;
+import Servlets.Controlador;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -50,6 +51,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -60,18 +62,18 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <body>\n");
       out.write("        <div class = \"container mt-4\">\n");
       out.write("            <div class = \"card\">\n");
-      out.write("                <div class = \"card-header\">\n");
-      out.write("                    <a class = \"btn btn-primary\">Nuevo Cliente<a/> \n");
+      out.write("                <div class = \"card-header text-white\">\n");
+      out.write("                    <a href=\"Controlador?accion=Agregar\" class = \"btn btn-primary\">Nuevo Cliente<a/> \n");
       out.write("                </div>\n");
       out.write("                <div class = \"card-body\">\n");
       out.write("                    <table class=\"table table-hover\">\n");
       out.write("                        <thead>\n");
       out.write("                            <tr>\n");
-      out.write("                                <th>Cedula</th>\n");
+      out.write("                                <th>Cédula</th>\n");
       out.write("                                <th>Nombre</th>\n");
       out.write("                                <th>Apellido1</th>\n");
       out.write("                                <th>Apellido2</th>\n");
-      out.write("                                <th>Direccion</th>\n");
+      out.write("                                <th>Dirección</th>\n");
       out.write("                                <th>Telefono</th>\n");
       out.write("                            </tr>\n");
       out.write("                        </thead>\n");
@@ -87,6 +89,21 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                             <tr>\n");
       out.write("                                 <td>");
       out.print(c.getCedula());
+      out.write("</td>\n");
+      out.write("                                 <td>");
+      out.print(c.getNombre());
+      out.write("</td>\n");
+      out.write("                                 <td>");
+      out.print(c.getApellido() );
+      out.write("</td>\n");
+      out.write("                                 <td>");
+      out.print(c.getApellido2() );
+      out.write("</td>\n");
+      out.write("                                 <td>");
+      out.print(c.getDireccion() );
+      out.write("</td>\n");
+      out.write("                                 <td>");
+      out.print(c.getTelefono() );
       out.write("</td>\n");
       out.write("                             </tr>\n");
       out.write("                             ");

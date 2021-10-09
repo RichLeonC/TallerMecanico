@@ -7,6 +7,7 @@
 <%@page import="Modelo.Cliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Control.AdmClientes"%>
+<%@page import="Servlets.Controlador"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,8 +19,8 @@
     <body>
         <div class = "container mt-4">
             <div class = "card">
-                <div class = "card-header">
-                    <a class = "btn btn-primary">Nuevo Cliente<a/> 
+                <div class = "card-header text-white">
+                    <a href="Controlador?accion=Agregar" class = "btn btn-primary">Nuevo Cliente<a/> 
                 </div>
                 <div class = "card-body">
                     <table class="table table-hover">

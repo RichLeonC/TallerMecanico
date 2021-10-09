@@ -21,6 +21,8 @@ public class AdmClientes {
     private ResultSet rs;
     private Connection con;
     private Conexion conex = new Conexion();
+    private int res;
+    private String msj;
 
     public AdmClientes() {
       
@@ -49,5 +51,26 @@ public class AdmClientes {
         } catch (Exception e) {
         }
          return listaClientes;
+    }
+    
+    public String agregar(int cedula, String nombre,String apellido1,String apellido2,String direccion,
+           int telefono){
+        String sql = "insert into Cliente(cedula,nombre,apellido,apellido2,direccion,telefono)"
+                + "values(?,?,?,?,?,?)" ; 
+        try {
+            con = conex.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, cedula);
+            ps.setString(2, nombre);
+            ps.setString(3, apellido1);
+            ps.setString(4, apellido2);
+            ps.setString(5, direccion);
+            ps.setInt(6, telefono);
+            res = ps.executeUpdate();
+            if(res==1) msj = "Cliente Agregado";
+            else msj = "Error al agregar, verifique bien los datos";
+        } catch (Exception e) {
+        }
+        return msj;
     }
 }
