@@ -20,7 +20,7 @@
         <div class = "container mt-4">
             <div class = "card">
                 <div class = "card-header text-white">
-                    <a href="Controlador?accion=Agregar" class = "btn btn-primary">Nuevo Cliente<a/> 
+                    <a href= "../Controlador?accion=agregar" method ="doGet" class = "btn btn-primary">Nuevo Cliente</a> 
                 </div>
                 <div class = "card-body">
                     <table class="table table-hover">

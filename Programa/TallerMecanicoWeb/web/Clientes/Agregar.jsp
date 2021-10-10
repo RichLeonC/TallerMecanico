@@ -21,19 +21,19 @@
                 <div class = "card-body">
                     <form action="Controlador">
                         <label>Cedula</label>
-                        <Input type="text" name="txtCedula" class="form-control">
+                        <Input type="text" name="txtCedula" class="form-control"/>
                          <label>Nombre</label>
-                        <Input type="text" name="txtNombre" class="form-control">
+                        <Input type="text" name="txtNombre" class="form-control"/>
                          <label>Apellido 1</label>
-                        <Input type="text" name="txtApellido1" class="form-control">
+                        <Input type="text" name="txtApellido1" class="form-control"/>
                          <label>Apellido 2</label>
-                        <Input type="text" name="txtApellido2" class="form-control">
+                        <Input type="text" name="txtApellido2" class="form-control"/>
                          <label>Direccion</label>
-                        <Input type="text" name="txtDireccion" class="form-control">
+                        <Input type="text" name="txtDireccion" class="form-control"/>
                          <label>Telefono</label>
-                        <Input type="text" name="txtTelefono" class="form-control">
-                        <input type ="submit" name="accion" value="Agregar"
-                         <button href="Controlador?accion=index.jsp">Regresar</button>
+                        <Input type="text" name="txtTelefono" class="form-control"/>
+                        <input type ="submit" name="accion" value="guardar"/>
+                        <a href="Clientes/index.jsp">Regresar</a>
                     </form>
                 </div>
                 

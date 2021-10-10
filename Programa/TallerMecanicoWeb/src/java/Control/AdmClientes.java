@@ -53,19 +53,33 @@ public class AdmClientes {
          return listaClientes;
     }
     
-    public String agregar(int cedula, String nombre,String apellido1,String apellido2,String direccion,
-           int telefono){
+    public String agregar(String cedula, String nombre,String apellido1,String apellido2,String direccion,
+           String telefono){
         String sql = "insert into Cliente(cedula,nombre,apellido,apellido2,direccion,telefono)"
                 + "values(?,?,?,?,?,?)" ; 
+        int ced;
+        int telef;
+        try {
+            ced = Integer.parseInt(cedula);
+        } catch (Exception e) {
+            msj = "Cedula invalida";
+            return msj;
+        }
+        try {
+            telef = Integer.parseInt(telefono);
+        } catch (Exception e) {
+            msj = "Telefono invalido";
+            return msj;
+        }
         try {
             con = conex.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, cedula);
+            ps.setInt(1, ced);
             ps.setString(2, nombre);
             ps.setString(3, apellido1);
             ps.setString(4, apellido2);
             ps.setString(5, direccion);
-            ps.setInt(6, telefono);
+            ps.setInt(6, telef);
             res = ps.executeUpdate();
             if(res==1) msj = "Cliente Agregado";
             else msj = "Error al agregar, verifique bien los datos";

@@ -59,7 +59,7 @@ public final class Agregar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <h5>Agregar nuevo Cliente</h5>\n");
       out.write("                </div>\n");
       out.write("                <div class = \"card-body\">\n");
-      out.write("                    <form action=\"Controlador\">\n");
+      out.write("                    <form action=\"../Controlador\">\n");
       out.write("                        <label>Cedula</label>\n");
       out.write("                        <Input type=\"text\" name=\"txtCedula\" class=\"form-control\">\n");
       out.write("                         <label>Nombre</label>\n");
@@ -72,8 +72,8 @@ public final class Agregar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <Input type=\"text\" name=\"txtDireccion\" class=\"form-control\">\n");
       out.write("                         <label>Telefono</label>\n");
       out.write("                        <Input type=\"text\" name=\"txtTelefono\" class=\"form-control\">\n");
-      out.write("                        <input type =\"submit\" name=\"accion\" value=\"Agregar\"\n");
-      out.write("                         <button href=\"Controlador?accion=index.jsp\">Regresar</button>\n");
+      out.write("                        <input type =\"submit\" name=\"accion\" value=\"Agregar\">\n");
+      out.write("                        <a href=\"../Controlador?accion=index\" method=\"doGet\">Regresar</a>\n");
       out.write("                    </form>\n");
       out.write("                </div>\n");
       out.write("                \n");
