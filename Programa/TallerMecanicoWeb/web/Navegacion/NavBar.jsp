@@ -22,10 +22,10 @@
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a  style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Cliente" target="myFrame">Clientes</a>
+          <a  style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?menu=Cliente&accion=Listar" target="myFrame">Clientes</a>
         </li>
         <li class="nav-item">
-          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Vehiculo" target="myFrame">Vehiculos</a>
+          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?menu=Vehiculo" target="myFrame">Vehiculos</a>
         </li>
         <li class="nav-item">
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Mecanicos</a>

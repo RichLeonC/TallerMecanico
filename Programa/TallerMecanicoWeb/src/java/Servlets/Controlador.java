@@ -22,10 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Controlador", urlPatterns = { "/Controlador" })
 public class Controlador extends HttpServlet {
 
-    String agregar = "Clientes/Agregar.jsp";
-    String modificar = "Modificar.jsp";
-    String cliente= "Clientes/Cliente.jsp";
-    String acceso="";
+ 
     AdmClientes clientes = new AdmClientes();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,16 +44,56 @@ public class Controlador extends HttpServlet {
             throws ServletException, IOException {
         
         RequestDispatcher dispatcher = null;
-        String accion = request.getParameter("accion");
+        String menu = request.getParameter("menu"); //Recibe la seccion del menu en la que estamos
+        String accion = request.getParameter("accion"); //Recibe la accion para ejecutar
         
-        switch(accion){
-            case "Cliente":
-                request.getRequestDispatcher("Clientes/Cliente.jsp").forward(request, response);
-                break;
-            case "Vehiculo":
-                request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
-                break;
+        if(menu.equals("Cliente")){//Entra a la pagina de clientes
+            request.getRequestDispatcher("General/Cliente.jsp").forward(request, response); //Redirecciona a esa pagina
+            switch(accion){
+                 case "Agregar": //Agrega Clientes
+                    String cedula = request.getParameter("txtCedula"); //Obtiene el string que escribio el usuario en el form
+                    String nombre = request.getParameter("txtNombre");
+                    String apellido1 = request.getParameter("txtApellido1");
+                    String apellido2 = request.getParameter("txtApellido2");
+                    String direccion = request.getParameter("txtDireccion");
+                    String telefono = request.getParameter("txtTelefono");
+                    clientes.agregar(cedula, nombre, apellido1, apellido2, direccion, telefono);
+                    break;
+            }
+            
+            
         }
+            
+        else if(menu.equals("Vehiculo")){//Entra a la pagina de Vehiculos
+             request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response); //Redirecciona a esa pagina
+             
+         }
+        
+        else if(menu.equals("Mecanico")){//Entra a la pagina de Mecanicos
+             
+             
+         }
+        
+        else if(menu.equals("Repuesto")){//Entra a la pagina de Repuestos
+             
+             
+         }
+        
+        else if(menu.equals("Reparacion")){//Entra a la pagina de Reparaciones
+             
+             
+         }
+        
+        else if(menu.equals("Factura")){//Entra a la pagina de Factura
+             
+             
+         }
+        
+        else if(menu.equals("Consulta")){//Entra a la pagina de Consultas
+             
+             
+         }
+       
            
         
           
