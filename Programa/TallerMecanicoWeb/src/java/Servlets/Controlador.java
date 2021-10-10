@@ -47,24 +47,13 @@ public class Controlador extends HttpServlet {
         String menu = request.getParameter("menu"); //Recibe la seccion del menu en la que estamos
         String accion = request.getParameter("accion"); //Recibe la accion para ejecutar
         
-        if(menu.equals("Cliente")){//Entra a la pagina de clientes
+        if(accion.equals("Cliente")){//Entra a la pagina de clientes
             request.getRequestDispatcher("General/Cliente.jsp").forward(request, response); //Redirecciona a esa pagina
-            switch(accion){
-                 case "Agregar": //Agrega Clientes
-                    String cedula = request.getParameter("txtCedula"); //Obtiene el string que escribio el usuario en el form
-                    String nombre = request.getParameter("txtNombre");
-                    String apellido1 = request.getParameter("txtApellido1");
-                    String apellido2 = request.getParameter("txtApellido2");
-                    String direccion = request.getParameter("txtDireccion");
-                    String telefono = request.getParameter("txtTelefono");
-                    clientes.agregar(cedula, nombre, apellido1, apellido2, direccion, telefono);
-                    break;
-            }
-            
+
             
         }
             
-        else if(menu.equals("Vehiculo")){//Entra a la pagina de Vehiculos
+        /*else if(menu.equals("Vehiculo")){//Entra a la pagina de Vehiculos
              request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response); //Redirecciona a esa pagina
              
          }
@@ -92,9 +81,20 @@ public class Controlador extends HttpServlet {
         else if(menu.equals("Consulta")){//Entra a la pagina de Consultas
              
              
-         }
+         }*/
        
-           
+           switch(accion){
+               case "Agregar": //Agrega Clientes
+                    String cedula = request.getParameter("txtCedula"); //Obtiene el string que escribio el usuario en el form
+                    String nombre = request.getParameter("txtNombre");
+                    String apellido1 = request.getParameter("txtApellido1");
+                    String apellido2 = request.getParameter("txtApellido2");
+                    String direccion = request.getParameter("txtDireccion");
+                    String telefono = request.getParameter("txtTelefono");
+                    clientes.agregar(cedula, nombre, apellido1, apellido2, direccion, telefono);
+                    request.getRequestDispatcher("General/Cliente.jsp").forward(request, response);
+                    break;
+           }
         
           
     }
