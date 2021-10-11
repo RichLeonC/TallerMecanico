@@ -46,7 +46,7 @@
                             <Input type="text" name="txtTelefono" class="form-control"/>
                          </div>
                         <br/>
-                        <input type ="submit" name="accion" value="Agregar" class ="btn btn-info"/>
+                        <input type ="submit" name="accion" value="Agregar" class ="btn btn-primary"/>
                             
                     </form>
                      </div>

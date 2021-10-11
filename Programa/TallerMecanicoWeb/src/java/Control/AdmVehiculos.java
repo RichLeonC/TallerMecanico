@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,19 +56,31 @@ public class AdmVehiculos {
          return listaVehiculos;
     }
     
-   public boolean actualizar(Vehiculo v){
-       String sql = "updtate Vehiculo set propietario=?,marca=?,modelo=?,año=?,color=? where placa=?";
+   public boolean actualizar(String placa,String propietario,String marca,String modelo,String anio,String color){
+        int pl,prop,an;
+       try {
+           pl = Integer.parseInt(placa);
+           prop = Integer.parseInt(propietario);
+           an = Integer.parseInt(anio);
+       } catch (Exception e) {
+           return false;
+       }
+       String sql = "update Vehiculo set propietario=?,marca=?,modelo=?,año=?,color=? where placa="+pl;
+  
        try {
            con = conex.getConnection();
            ps = con.prepareStatement(sql);
-           ps.setInt(2, v.getPropietario());
-           ps.setString(3, v.getMarca());
-           ps.setString(4, v.getModelo());
-           ps.setInt(5, v.getAnio());
-           ps.setString(6, v.getColor());
+        
+           ps.setInt(1, prop);
+           ps.setString(2, marca);
+           ps.setString(3, modelo);
+           ps.setInt(4, an);
+           ps.setString(5, color);
            ps.executeUpdate();
        } catch (Exception e) {
+          
            return false;
+           
        }
        return true;
    }

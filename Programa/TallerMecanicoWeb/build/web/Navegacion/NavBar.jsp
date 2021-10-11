@@ -14,7 +14,7 @@
         <title>Taller Mecanico</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary bg-gradient">
   
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
@@ -28,7 +28,7 @@
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Vehiculo" target="myFrame">Vehiculos</a>
         </li>
         <li class="nav-item">
-          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Mecanicos</a>
+          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Mecanico" target="myFrame">Mecánicos</a>
         </li>
         <li class="nav-item">
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Repuestos</a>

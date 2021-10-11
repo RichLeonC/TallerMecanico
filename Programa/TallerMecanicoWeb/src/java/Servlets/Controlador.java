@@ -6,6 +6,8 @@
 package Servlets;
 
 import Control.AdmClientes;
+import Control.AdmVehiculos;
+import Modelo.Vehiculo;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -22,8 +24,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Controlador", urlPatterns = { "/Controlador" })
 public class Controlador extends HttpServlet {
 
- 
+    int id;
     AdmClientes clientes = new AdmClientes();
+    AdmVehiculos vehiculos = new AdmVehiculos();
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -65,7 +69,20 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
                     break;
                 case "EditarV":
-                    
+                    id=Integer.parseInt(request.getParameter("id"));
+                    Vehiculo v = vehiculos.listarPlaca(id);
+                    request.setAttribute("vehiculo", v);
+                    request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String placa = request.getParameter("txtPlaca"); 
+                    String propietario = request.getParameter("txtPropietario");
+                    String marca = request.getParameter("txtMarca");
+                    String modelo = request.getParameter("txtModelo");
+                    String anio = request.getParameter("txtAnio");
+                    String color = request.getParameter("txtColor");
+                    vehiculos.actualizar(placa, propietario, marca, modelo, anio, color);
+                    request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
                     break;
            }
         

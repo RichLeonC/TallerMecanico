@@ -20,6 +20,16 @@ public class Vehiculo {
     public Vehiculo() {
     }
 
+    public Vehiculo(int placa, int propietario, String marca, String modelo, int anio, String color) {
+        this.placa = placa;
+        this.propietario = propietario;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.anio = anio;
+        this.color = color;
+    }
+    
+    
     public int getPlaca() {
         return placa;
     }

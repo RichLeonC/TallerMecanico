@@ -18,8 +18,40 @@
     </head>
     <body>
         <div class="d-flex">
-            
-                <div class = "col-sm-6">
+                <div class = "card col-sm-4">
+                <div class = "card-body">
+                    <form>
+                        <div class="form-group">
+                            <label>Placa</label>
+                            <Input type="text" value="${vehiculo.getPlaca()}" name="txtPlaca" class="form-control"/>
+                        </div>
+                         <div class="form-group">
+                            <label>Propietario</label>
+                            <Input type="text" name="txtPropietario" value="${vehiculo.getPropietario()}" class="form-control"/>
+                        </div>
+                         <div class="form-group">
+                            <label>Marca</label>
+                            <Input type="text" name="txtMarca" value="${vehiculo.getMarca()}" class="form-control"/>
+                        </div>
+                         <div class="form-group">
+                            <label>Modelo</label>
+                            <Input type="text" name="txtModelo" value="${vehiculo.getModelo()}" class="form-control"/>
+                        </div>
+                         <div class="form-group">
+                            <label>Año</label>
+                            <Input type="text" name="txtAnio" value="${vehiculo.getAnio()}" class="form-control"/>
+                        </div>
+                         <div class="form-group">
+                            <label>Color</label>
+                            <Input type="text" name="txtColor" value="${vehiculo.getColor()}" class="form-control"/>
+                         </div>
+                        <br/>
+                        <input type ="submit" name="accion" value="Actualizar" class ="btn btn-success"/>
+                            
+                    </form>
+                     </div>
+                </div>
+                <div class = "col-sm-8">
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -46,8 +78,8 @@
                                  <td><%=v.getAnio() %></td>
                                  <td><%=v.getColor() %></td>
                                  <td>
-                                     <a class="btn btn-warning" href="Controlador?accion=EditarV">Editar</a>
-                                     <a class="btn btn-danger" href="Controlador?accion=DeleteV">Eliminar</a>
+                                     <a class="btn btn-warning" href="Controlador?accion=EditarV&id=<%=v.getPlaca()%>">Editar</a>
+                                     
                                  </td>
                              </tr>
                              <%}%>
