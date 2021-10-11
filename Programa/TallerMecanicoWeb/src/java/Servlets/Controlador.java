@@ -98,6 +98,9 @@ public class Controlador extends HttpServlet {
                 case "Repuesto":
                     request.getRequestDispatcher("General/Repuesto.jsp").forward(request, response);
                     break;
+                case "Reparacion":
+                    request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
+                    break;
            }
         
           
