@@ -22,8 +22,8 @@ public class AdmMecanicos {
     private ResultSet rs;
     private Connection con;
     private Conexion conex = new Conexion();
-    private int res;
-    private String msj;
+
+
 
     public AdmMecanicos() {
     }

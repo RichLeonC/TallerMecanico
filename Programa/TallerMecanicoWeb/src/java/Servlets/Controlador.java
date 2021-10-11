@@ -95,6 +95,9 @@ public class Controlador extends HttpServlet {
                     mecanicos.eliminar(id);
                     request.getRequestDispatcher("General/Mecanico.jsp").forward(request, response);
                     break;
+                case "Repuesto":
+                    request.getRequestDispatcher("General/Repuesto.jsp").forward(request, response);
+                    break;
            }
         
           

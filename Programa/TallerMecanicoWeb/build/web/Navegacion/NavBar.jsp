@@ -31,7 +31,7 @@
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Mecanico" target="myFrame">Mecánicos</a>
         </li>
         <li class="nav-item">
-          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Repuestos</a>
+          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Repuesto" target="myFrame">Repuestos</a>
         </li>
         <li class="nav-item">
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Reparaciones</a>
