@@ -46,45 +46,12 @@ public class Controlador extends HttpServlet {
         RequestDispatcher dispatcher = null;
         String menu = request.getParameter("menu"); //Recibe la seccion del menu en la que estamos
         String accion = request.getParameter("accion"); //Recibe la accion para ejecutar
-        
-        if(accion.equals("Cliente")){//Entra a la pagina de clientes
-            request.getRequestDispatcher("General/Cliente.jsp").forward(request, response); //Redirecciona a esa pagina
 
-            
-        }
-            
-        /*else if(menu.equals("Vehiculo")){//Entra a la pagina de Vehiculos
-             request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response); //Redirecciona a esa pagina
-             
-         }
-        
-        else if(menu.equals("Mecanico")){//Entra a la pagina de Mecanicos
-             
-             
-         }
-        
-        else if(menu.equals("Repuesto")){//Entra a la pagina de Repuestos
-             
-             
-         }
-        
-        else if(menu.equals("Reparacion")){//Entra a la pagina de Reparaciones
-             
-             
-         }
-        
-        else if(menu.equals("Factura")){//Entra a la pagina de Factura
-             
-             
-         }
-        
-        else if(menu.equals("Consulta")){//Entra a la pagina de Consultas
-             
-             
-         }*/
-       
-           switch(accion){
-               case "Agregar": //Agrega Clientes
+            switch(accion){
+                case "Cliente":
+                    request.getRequestDispatcher("General/Cliente.jsp").forward(request, response); //Redirecciona a esa pagina
+                    break;
+                case "Agregar": //Agrega Clientes
                     String cedula = request.getParameter("txtCedula"); //Obtiene el string que escribio el usuario en el form
                     String nombre = request.getParameter("txtNombre");
                     String apellido1 = request.getParameter("txtApellido1");
@@ -93,6 +60,12 @@ public class Controlador extends HttpServlet {
                     String telefono = request.getParameter("txtTelefono");
                     clientes.agregar(cedula, nombre, apellido1, apellido2, direccion, telefono);
                     request.getRequestDispatcher("General/Cliente.jsp").forward(request, response);
+                    break;
+                case "Vehiculo":
+                    request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
+                    break;
+                case "EditarV":
+                    
                     break;
            }
         

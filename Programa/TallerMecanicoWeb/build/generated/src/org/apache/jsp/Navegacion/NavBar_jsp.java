@@ -61,10 +61,10 @@ public final class NavBar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <a style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" aria-current=\"page\" href=\"#\">Home</a>\n");
       out.write("        </li>\n");
       out.write("        <li class=\"nav-item\">\n");
-      out.write("          <a  style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" href=\"../Controlador?menu=Cliente&accion=Listar\" target=\"myFrame\">Clientes</a>\n");
+      out.write("          <a  style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" href=\"../Controlador?accion=Cliente\" target=\"myFrame\">Clientes</a>\n");
       out.write("        </li>\n");
       out.write("        <li class=\"nav-item\">\n");
-      out.write("          <a style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" href=\"../Controlador?menu=Vehiculo\" target=\"myFrame\">Vehiculos</a>\n");
+      out.write("          <a style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" href=\"../Controlador?accion=Vehiculo\" target=\"myFrame\">Vehiculos</a>\n");
       out.write("        </li>\n");
       out.write("        <li class=\"nav-item\">\n");
       out.write("          <a style =\"margin-left: 10px; border:none\" class=\"btn btn-outline-light\" href=\"#\"\">Mecanicos</a>\n");
