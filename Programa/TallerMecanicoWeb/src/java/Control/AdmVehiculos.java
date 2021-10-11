@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author richa
  */
 public class AdmVehiculos {
-     private PreparedStatement ps;
+    private PreparedStatement ps;
     private ResultSet rs;
     private Connection con;
     private Conexion conex = new Conexion();
@@ -85,18 +85,7 @@ public class AdmVehiculos {
        return true;
    }
    
-   public boolean eliminar(int placa){
-       String sql = "delete from Vehicul where placa="+placa;
-       
-       try {
-           con = conex.getConnection();
-           ps = con.prepareStatement(sql);
-           ps.executeUpdate();
-       } catch (Exception e) {
-           return false;
-       }
-       return true;
-   }
+  
    
    public Vehiculo listarPlaca(int placa){
        Vehiculo vehiculo = new Vehiculo();

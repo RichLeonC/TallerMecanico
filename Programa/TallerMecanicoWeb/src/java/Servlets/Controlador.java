@@ -6,6 +6,7 @@
 package Servlets;
 
 import Control.AdmClientes;
+import Control.AdmMecanicos;
 import Control.AdmVehiculos;
 import Modelo.Vehiculo;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class Controlador extends HttpServlet {
     int id;
     AdmClientes clientes = new AdmClientes();
     AdmVehiculos vehiculos = new AdmVehiculos();
+    AdmMecanicos mecanicos = new AdmMecanicos();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -83,6 +85,15 @@ public class Controlador extends HttpServlet {
                     String color = request.getParameter("txtColor");
                     vehiculos.actualizar(placa, propietario, marca, modelo, anio, color);
                     request.getRequestDispatcher("General/Vehiculo.jsp").forward(request, response);
+                    break;
+                    
+                case "Mecanico":
+                    request.getRequestDispatcher("General/Mecanico.jsp").forward(request, response);
+                    break;
+                case "EliminarM":
+                    id = Integer.parseInt(request.getParameter("id"));
+                    mecanicos.eliminar(id);
+                    request.getRequestDispatcher("General/Mecanico.jsp").forward(request, response);
                     break;
            }
         
