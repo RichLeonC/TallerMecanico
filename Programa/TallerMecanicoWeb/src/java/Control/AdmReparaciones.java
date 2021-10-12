@@ -6,6 +6,7 @@
 package Control;
 
 import Config.Conexion;
+import Modelo.Cliente;
 import Modelo.Mecanico;
 import Modelo.Reparacion;
 import java.sql.Connection;
@@ -52,17 +53,17 @@ public class AdmReparaciones {
          return listaReparaciones;
     }
      
-   public boolean agregar(String id, String placa, String cliente, String mecanicoLider,String fechaEntrada){
+   public boolean agregar(String id, String placa, String mecanicoLider,String fechaEntrada){
        int ide,pl,cl,ml;  
        try {
            ide = Integer.parseInt(id);
            pl = Integer.parseInt(placa);
-           cl = Integer.parseInt(cliente);
+          
            ml = Integer.parseInt(mecanicoLider);
        } catch (Exception e) {
            return false;
        }
-
+       cl=listarPropietario(pl);
        Date f = new Date(2021,3,3);
        String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?, null)";
        try {
@@ -86,6 +87,24 @@ public class AdmReparaciones {
            return false;
       }
        return true;
+   }
+   
+   public int listarPropietario(int placa){
+       int cedula = 0;
+       String sql = "select propietario from Vehiculo where placa="+placa;
+       try {
+           con = conex.getConnection();
+           ps = con.prepareStatement(sql);
+           rs= ps.executeQuery();
+            
+            while(rs.next()){
+                cedula = rs.getInt("propietario");
+            }
+       } catch (Exception e) {
+       }
+       return cedula;
+       
+       
    }
      
 }

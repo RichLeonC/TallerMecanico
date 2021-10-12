@@ -107,11 +107,11 @@ public class Controlador extends HttpServlet {
                 case "AgregarR":
                     String ide = request.getParameter("txtId");
                     String placa1 = request.getParameter("placa");
-                    String cliente1 = request.getParameter("cliente");
+                    
                     String mecanico1 = request.getParameter("mecanico");
                     String fecha = request.getParameter("txtFecha");
                   
-                    reparaciones.agregar(ide, placa1, cliente1, mecanico1, fecha);
+                    reparaciones.agregar(ide, placa1, mecanico1, fecha);
                     request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
                     break;
            }

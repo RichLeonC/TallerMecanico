@@ -46,20 +46,7 @@
                              <%}%>
                               </select>
                         </div>
-                         <div class="form-group">
-                             <label>Cliente</label>
-                            <select class="form-select" aria-label="Default select example" name="cliente">                           
-                                
-                                <% 
-                                AdmClientes clientes = new AdmClientes();
-                                ArrayList<Cliente> listaClientes = clientes.listar();
-                                for(Cliente c:listaClientes){
-                            
-                                %>
-                             <option><%=c.getCedula() %></option>
-                             <%}%>
-                              </select>
-                        </div>
+                         
                          <div class="form-group">
                              <label>Mécanico Líder</label>
                            <select class="form-select" aria-label="Default select example" name="mecanico">
