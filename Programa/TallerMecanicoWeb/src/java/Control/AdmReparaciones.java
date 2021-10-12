@@ -64,23 +64,17 @@ public class AdmReparaciones {
            return false;
        }
        cl=listarPropietario(pl);
-       Date f = new Date(2021,3,3);
-       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?, null)";
+     
+       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?,?)";
        try {
            con = conex.getConnection();
            ps = con.prepareStatement(sql);
            
            ps.setInt(1, ide);
-           JOptionPane.showMessageDialog(null, ide);
            ps.setInt(2, pl);
-           JOptionPane.showMessageDialog(null, pl);
            ps.setInt(3, cl);
-           JOptionPane.showMessageDialog(null, cl);
-           ps.setInt(4, ml);
-           JOptionPane.showMessageDialog(null, ml);
-         //  ps.setDate(5, null);
-          // JOptionPane.showMessageDialog(null, fechaEntrada);
-          // ps.setString(5, fechaEntrada);
+           ps.setInt(4, ml);;
+           ps.setString(5, fechaEntrada);
            ps.executeUpdate();
        } catch (Exception e) {
            JOptionPane.showMessageDialog(null, "Entre al catch1");

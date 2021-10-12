@@ -62,7 +62,7 @@
                               </select>
                         </div>
                          <div class="form-group">
-                            <label>Fecha de Entrada (MM/DD/AAAA)</label>
+                            <label>Fecha de Entrada (AAAA/MM/DD)</label>
                             <Input type="text" name="txtFecha" class="form-control"/>
                         </div>
                          
