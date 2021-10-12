@@ -7,10 +7,12 @@ package Servlets;
 
 import Control.AdmClientes;
 import Control.AdmMecanicos;
+import Control.AdmReparaciones;
 import Control.AdmVehiculos;
 import Modelo.Vehiculo;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +31,7 @@ public class Controlador extends HttpServlet {
     AdmClientes clientes = new AdmClientes();
     AdmVehiculos vehiculos = new AdmVehiculos();
     AdmMecanicos mecanicos = new AdmMecanicos();
+    AdmReparaciones reparaciones = new AdmReparaciones();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -99,6 +102,15 @@ public class Controlador extends HttpServlet {
                     request.getRequestDispatcher("General/Repuesto.jsp").forward(request, response);
                     break;
                 case "Reparacion":
+                    request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
+                    break;
+                case "AgregarR":
+                    String ide = request.getParameter("txtId");
+                    String placa1 = request.getParameter("placa");
+                    String cliente1 = request.getParameter("cliente");
+                    String mecanico1 = request.getParameter("mecanico");
+                    String fecha = request.getParameter("txtFecha");
+                    reparaciones.agregar(ide, placa1, cliente1, mecanico1, fecha);
                     request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
                     break;
            }

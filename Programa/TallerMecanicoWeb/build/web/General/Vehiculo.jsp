@@ -66,8 +66,8 @@
                         <tbody>
                             <% 
                                AdmVehiculos vehiculos = new AdmVehiculos();
-                               ArrayList<Vehiculo> listaClientes = vehiculos.listar();
-                               for(Vehiculo v:listaClientes){
+                               ArrayList<Vehiculo> listaVehiculos = vehiculos.listar();
+                               for(Vehiculo v:listaVehiculos){
                             
                              %>
                              <tr>

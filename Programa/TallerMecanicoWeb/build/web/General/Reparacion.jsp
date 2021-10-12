@@ -4,6 +4,11 @@
     Author     : richa
 --%>
 
+<%@page import="Modelo.Mecanico"%>
+<%@page import="Control.AdmMecanicos"%>
+<%@page import="Control.AdmClientes"%>
+<%@page import="Modelo.Vehiculo"%>
+<%@page import="Control.AdmVehiculos"%>
 <%@page import="Modelo.Reparacion"%>
 <%@page import="Modelo.Cliente"%>
 <%@page import="java.util.ArrayList"%>
@@ -27,25 +32,57 @@
                             <label>Id</label>
                             <Input type="text" name="txtId" class="form-control"/>
                         </div>
-                         <div class="form-group">
-                            <label>Placa</label>
-                            <Input type="text" name="txtNombre" class="form-control"/>
+                         <div class="form-group">   
+                              <label>Placa</label>
+                            <select class="form-select" aria-label="Default select example" name ="placa">                          
+                                
+                                <% 
+                               AdmVehiculos vehiculos = new AdmVehiculos();
+                               ArrayList<Vehiculo> listaVehiculos = vehiculos.listar();
+                               for(Vehiculo v:listaVehiculos){
+                            
+                             %>
+                             <option id="placaR" name="placaR"><%=v.getPlaca() %></option>
+                             <%}%>
+                              </select>
                         </div>
                          <div class="form-group">
-                            <label>Cliente</label>
-                            <Input type="text" name="txtApellido1" class="form-control"/>
+                             <label>Cliente</label>
+                            <select class="form-select" aria-label="Default select example" name="cliente">                           
+                                
+                                <% 
+                                AdmClientes clientes = new AdmClientes();
+                                ArrayList<Cliente> listaClientes = clientes.listar();
+                                for(Cliente c:listaClientes){
+                            
+                                %>
+                             <option value="1"><%=c.getCedula() %></option>
+                             <%}%>
+                              </select>
                         </div>
                          <div class="form-group">
-                            <label>Mecánico Lider</label>
-                            <Input type="text" name="txtApellido2" class="form-control"/>
+                             <label>Mécanico Líder</label>
+                           <select class="form-select" aria-label="Default select example" name="mecanico">
+
+                                <% 
+                                AdmMecanicos mecanicos = new AdmMecanicos();
+                                ArrayList<Mecanico> listaMecanicos = mecanicos.listar();
+                                for(Mecanico m:listaMecanicos){
+                            
+                                %>
+                             <option value="1"><%=m.getCodigo() %></option>
+                             <%}%>
+                              </select>
                         </div>
                          <div class="form-group">
-                            <label>Fecha de Entrada</label>
-                            <Input type="text" name="txtDireccion" class="form-control"/>
+                            <label>Fecha de Entrada (MM/DD/AAAA)</label>
+                            <Input type="text" name="txtFecha" class="form-control"/>
                         </div>
                          
                         <br/>
-                        <input type ="submit" name="accion" value="Agregar" class ="btn btn-primary"/>
+                        <button type="submit" name="accion" value="AgregarR" class ="btn btn-primary">Agregar</button>
+                            
+                        
                             
                     </form>
                      </div>

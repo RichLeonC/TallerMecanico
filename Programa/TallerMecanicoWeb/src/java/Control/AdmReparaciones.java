@@ -13,6 +13,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -50,7 +51,7 @@ public class AdmReparaciones {
          return listaReparaciones;
     }
      
-   public boolean agregar(String id, String placa, String cliente, String mecanicoLider,Date fechaEntrada){
+   public boolean agregar(String id, String placa, String cliente, String mecanicoLider,String fechaEntrada){
        int ide,pl,cl,ml;  
        try {
            ide = Integer.parseInt(id);
@@ -60,17 +61,24 @@ public class AdmReparaciones {
        } catch (Exception e) {
            return false;
        }
-       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?,?)";
+       JOptionPane.showMessageDialog(null, ide);
+       JOptionPane.showMessageDialog(null, pl);
+       JOptionPane.showMessageDialog(null, cl);
+       JOptionPane.showMessageDialog(null, ml);
+       JOptionPane.showMessageDialog(null, fechaEntrada);
+       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?,1/1/2021)";
        try {
            con = conex.getConnection();
            ps = con.prepareStatement(sql);
+           
            ps.setInt(1, ide);
            ps.setInt(2, pl);
            ps.setInt(3, cl);
            ps.setInt(4, ml);
-           ps.setDate(5, fechaEntrada);
+          // ps.setString(5, fechaEntrada);
            ps.executeUpdate();
        } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, "Entre al catch1");
            return false;
        }
        return true;
