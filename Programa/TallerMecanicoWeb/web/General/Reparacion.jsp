@@ -42,7 +42,7 @@
                                for(Vehiculo v:listaVehiculos){
                             
                              %>
-                             <option id="placaR" name="placaR"><%=v.getPlaca() %></option>
+                             <option><%=v.getPlaca() %></option>
                              <%}%>
                               </select>
                         </div>
@@ -56,7 +56,7 @@
                                 for(Cliente c:listaClientes){
                             
                                 %>
-                             <option value="1"><%=c.getCedula() %></option>
+                             <option><%=c.getCedula() %></option>
                              <%}%>
                               </select>
                         </div>
@@ -70,7 +70,7 @@
                                 for(Mecanico m:listaMecanicos){
                             
                                 %>
-                             <option value="1"><%=m.getCodigo() %></option>
+                             <option><%=m.getCodigo() %></option>
                              <%}%>
                               </select>
                         </div>

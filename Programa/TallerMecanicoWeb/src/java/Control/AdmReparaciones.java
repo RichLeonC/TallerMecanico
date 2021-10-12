@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -61,26 +62,29 @@ public class AdmReparaciones {
        } catch (Exception e) {
            return false;
        }
-       JOptionPane.showMessageDialog(null, ide);
-       JOptionPane.showMessageDialog(null, pl);
-       JOptionPane.showMessageDialog(null, cl);
-       JOptionPane.showMessageDialog(null, ml);
-       JOptionPane.showMessageDialog(null, fechaEntrada);
-       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?,1/1/2021)";
+
+       Date f = new Date(2021,3,3);
+       String sql = "insert into Reparacion(id,placa,cliente,mecanicoLider,fechaEntrada) values(?,?,?,?, null)";
        try {
            con = conex.getConnection();
            ps = con.prepareStatement(sql);
            
            ps.setInt(1, ide);
+           JOptionPane.showMessageDialog(null, ide);
            ps.setInt(2, pl);
+           JOptionPane.showMessageDialog(null, pl);
            ps.setInt(3, cl);
+           JOptionPane.showMessageDialog(null, cl);
            ps.setInt(4, ml);
+           JOptionPane.showMessageDialog(null, ml);
+         //  ps.setDate(5, null);
+          // JOptionPane.showMessageDialog(null, fechaEntrada);
           // ps.setString(5, fechaEntrada);
            ps.executeUpdate();
        } catch (Exception e) {
            JOptionPane.showMessageDialog(null, "Entre al catch1");
            return false;
-       }
+      }
        return true;
    }
      

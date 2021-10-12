@@ -4,6 +4,9 @@
     Author     : richa
 --%>
 
+<%@page import="Control.AdmClientes"%>
+<%@page import="Modelo.Cliente"%>
+<%@page import="Modelo.Cliente"%>
 <%@page import="Modelo.Vehiculo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Control.AdmVehiculos"%>
@@ -27,7 +30,17 @@
                         </div>
                          <div class="form-group">
                             <label>Propietario</label>
-                            <Input type="text" name="txtPropietario" value="${vehiculo.getPropietario()}" class="form-control"/>
+                           <select class="form-select" aria-label="Default select example" name="cliente">
+                                <option selected>${vehiculo.getPropietario()}</option>
+                                <% 
+                                AdmClientes clientes = new AdmClientes();
+                                ArrayList<Cliente> listaClientes = clientes.listar();
+                                for(Cliente c:listaClientes){
+                            
+                                %>
+                             <option><%=c.getCedula() %></option>
+                             <%}%>
+                              </select>
                         </div>
                          <div class="form-group">
                             <label>Marca</label>

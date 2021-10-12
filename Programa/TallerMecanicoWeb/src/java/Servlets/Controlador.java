@@ -81,7 +81,7 @@ public class Controlador extends HttpServlet {
                     break;
                 case "Actualizar":
                     String placa = request.getParameter("txtPlaca"); 
-                    String propietario = request.getParameter("txtPropietario");
+                    String propietario = request.getParameter("cliente");
                     String marca = request.getParameter("txtMarca");
                     String modelo = request.getParameter("txtModelo");
                     String anio = request.getParameter("txtAnio");
@@ -110,6 +110,7 @@ public class Controlador extends HttpServlet {
                     String cliente1 = request.getParameter("cliente");
                     String mecanico1 = request.getParameter("mecanico");
                     String fecha = request.getParameter("txtFecha");
+                  
                     reparaciones.agregar(ide, placa1, cliente1, mecanico1, fecha);
                     request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
                     break;

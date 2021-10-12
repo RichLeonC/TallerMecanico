@@ -65,10 +65,14 @@ public class AdmVehiculos {
        } catch (Exception e) {
            return false;
        }
+       String sqlSet = "set foreign_key_checks = 0"; //Quita las restricciones del foreing key permitiendo modificarlas
+       String revertSql = "set foreign_key_checks = 1"; //Activa las restricciones de nuevo
        String sql = "update Vehiculo set propietario=?,marca=?,modelo=?,año=?,color=? where placa="+pl;
   
        try {
            con = conex.getConnection();
+           ps= con.prepareStatement(sqlSet);
+           ps.executeUpdate();
            ps = con.prepareStatement(sql);
         
            ps.setInt(1, prop);
@@ -76,6 +80,8 @@ public class AdmVehiculos {
            ps.setString(3, modelo);
            ps.setInt(4, an);
            ps.setString(5, color);
+           ps.executeUpdate();
+           ps= con.prepareStatement(revertSql);
            ps.executeUpdate();
        } catch (Exception e) {
           

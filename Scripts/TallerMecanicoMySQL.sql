@@ -129,7 +129,6 @@ select * from Vehiculo;
 select * from Mecanico;
 select * from Repuesto;
 select * from ManoDeObra;
-
 delete from Cliente where cedula!=118180009;
 drop table Cliente;
 drop table Vehiculo;
