@@ -7,6 +7,7 @@ package Servlets;
 
 import Control.AdmClientes;
 import Control.AdmMecanicos;
+import Control.AdmMecanicosSecundarios;
 import Control.AdmReparaciones;
 import Control.AdmVehiculos;
 import Modelo.Vehiculo;
@@ -32,6 +33,7 @@ public class Controlador extends HttpServlet {
     AdmVehiculos vehiculos = new AdmVehiculos();
     AdmMecanicos mecanicos = new AdmMecanicos();
     AdmReparaciones reparaciones = new AdmReparaciones();
+    AdmMecanicosSecundarios secundarios = new AdmMecanicosSecundarios();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -113,6 +115,15 @@ public class Controlador extends HttpServlet {
                   
                     reparaciones.agregar(ide, placa1, mecanico1, fecha);
                     request.getRequestDispatcher("General/Reparacion.jsp").forward(request, response);
+                    break;
+                case "AsociarM":
+                    request.getRequestDispatcher("General/Mecanico_Secundario.jsp").forward(request, response);
+                    break;
+                case "AgregarMS":
+                    String idR = request.getParameter("id");
+                    String cod = request.getParameter("codigo");
+                    secundarios.agregar(idR, cod);
+                    request.getRequestDispatcher("General/Mecanico_Secundario.jsp").forward(request, response);
                     break;
            }
         

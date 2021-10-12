@@ -40,7 +40,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item"href="../Controlador?accion=Reparacion" target="myFrame">Crear reparación</a></li>
-              <li><a class="dropdown-item" href="#">Asignar mecánico</a></li>
+              <li><a class="dropdown-item" href="../Controlador?accion=AsociarM" target="myFrame">Asignar mecánico</a></li>
               <li><a class="dropdown-item" href="#">Anotar repuesto</a></li>
                <li><a class="dropdown-item" href="#">Anotar mano de obra</a></li>
             </div>
