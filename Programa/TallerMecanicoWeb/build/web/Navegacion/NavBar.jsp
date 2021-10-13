@@ -41,12 +41,12 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li><a class="dropdown-item"href="../Controlador?accion=Reparacion" target="myFrame">Crear reparación</a></li>
               <li><a class="dropdown-item" href="../Controlador?accion=AsociarM" target="myFrame">Asignar mecánico</a></li>
-              <li><a class="dropdown-item" href="#">Anotar repuesto</a></li>
-               <li><a class="dropdown-item" href="#">Anotar mano de obra</a></li>
+              <li><a class="dropdown-item" href="../Controlador?accion=AnotarR" target="myFrame">Anotar repuesto</a></li>
+               <li><a class="dropdown-item"  href="../Controlador?accion=AnotarMO" target="myFrame">Anotar mano de obra</a></li>
             </div>
         </div>
         <li class="nav-item">
-          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Facturas</a>
+          <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="../Controlador?accion=Factura" target="myFrame">Facturas</a>
         </li>
         <li class="nav-item">
           <a style ="margin-left: 10px; border:none" class="btn btn-outline-light" href="#"">Consultas</a>

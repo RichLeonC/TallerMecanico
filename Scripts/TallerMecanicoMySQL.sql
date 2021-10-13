@@ -124,6 +124,18 @@ insert into ManoDeObra values(55,'Cambio de Freno',43);
 insert into ManoDeObra values(56,'Cambio de Carburador',35);
 insert into ManoDeObra values(57,'Cambio de Bateria',115);
 
+
+create view Factura_RepuestosV as
+select idReparacion,codigoRepuesto,(Repuesto.precio*0.15)+Repuesto.precio as precioIVA from Repuesto_Reparacion inner join Repuesto on codigoRepuesto = Repuesto.codigo;
+select * from Factura_RepuestosV;
+
+select sum(precioIVA) from Factura_RepuestosV where idReparacion = 145;
+
+
+create view Factura_ObrasV as
+select idReparacion,codigoManoObra,(ManoDeObra.monto*0.05)+ManoDeObra.monto as montoIVA from ManoObra_Reparacion inner join ManoDeObra on codigoManoObra = ManoDeObra.codigo;
+select * from Factura_ObrasV;
+
 select * from Cliente;
 select * from Vehiculo;
 select * from Mecanico;

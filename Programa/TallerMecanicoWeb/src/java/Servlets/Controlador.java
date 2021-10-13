@@ -6,9 +6,12 @@
 package Servlets;
 
 import Control.AdmClientes;
+import Control.AdmFacturas;
+import Control.AdmManoReparaciones;
 import Control.AdmMecanicos;
 import Control.AdmMecanicosSecundarios;
 import Control.AdmReparaciones;
+import Control.AdmRepuestoReparacion;
 import Control.AdmVehiculos;
 import Modelo.Vehiculo;
 import java.io.IOException;
@@ -34,6 +37,9 @@ public class Controlador extends HttpServlet {
     AdmMecanicos mecanicos = new AdmMecanicos();
     AdmReparaciones reparaciones = new AdmReparaciones();
     AdmMecanicosSecundarios secundarios = new AdmMecanicosSecundarios();
+    AdmRepuestoReparacion repuestosR = new AdmRepuestoReparacion();
+    AdmManoReparaciones manoR = new AdmManoReparaciones();
+    AdmFacturas facturas = new AdmFacturas();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -124,6 +130,34 @@ public class Controlador extends HttpServlet {
                     String cod = request.getParameter("codigo");
                     secundarios.agregar(idR, cod);
                     request.getRequestDispatcher("General/Mecanico_Secundario.jsp").forward(request, response);
+                    break;
+                case "AnotarR":
+                    request.getRequestDispatcher("General/Repuesto_Reparacion.jsp").forward(request, response);
+                    break;
+                case "AgregarRR":
+                    String code = request.getParameter("codRepuesto");
+                    String ideR = request.getParameter("idR");
+                    repuestosR.agregar(code, ideR);
+                    request.getRequestDispatcher("General/Repuesto_Reparacion.jsp").forward(request, response);
+                    break;
+                case "AnotarMO":
+                    request.getRequestDispatcher("General/ManoObra_Reparacion.jsp").forward(request, response);
+                    break;
+                case "AgregarMR":
+                    String codeO = request.getParameter("codObra");
+                    String idO=request.getParameter("idR");
+                    manoR.agregar(codeO, idO);
+                    request.getRequestDispatcher("General/ManoObra_Reparacion.jsp").forward(request, response);
+                    break;
+                case "Factura":
+                    request.getRequestDispatcher("General/Factura.jsp").forward(request, response);
+                    break;
+                case "AgregarF":
+                    String num = request.getParameter("txtNum");
+                    String ideF = request.getParameter("id");
+                    String fechaF = request.getParameter("txtFecha");
+                    facturas.agregar(num, ideF, fechaF);
+                    request.getRequestDispatcher("General/Factura.jsp").forward(request, response);
                     break;
            }
         

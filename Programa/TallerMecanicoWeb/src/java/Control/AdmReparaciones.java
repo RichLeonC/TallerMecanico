@@ -73,7 +73,7 @@ public class AdmReparaciones {
            ps.setInt(1, ide);
            ps.setInt(2, pl);
            ps.setInt(3, cl);
-           ps.setInt(4, ml);;
+           ps.setInt(4, ml);
            ps.setString(5, fechaEntrada);
            ps.executeUpdate();
        } catch (Exception e) {

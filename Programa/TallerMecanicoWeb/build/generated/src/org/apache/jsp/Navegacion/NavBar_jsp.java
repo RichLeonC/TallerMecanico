@@ -79,8 +79,8 @@ public final class NavBar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </button>\n");
       out.write("            <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">\n");
       out.write("              <li><a class=\"dropdown-item\"href=\"../Controlador?accion=Reparacion\" target=\"myFrame\">Crear reparación</a></li>\n");
-      out.write("              <li><a class=\"dropdown-item\" href=\"#\">Asignar mecánico</a></li>\n");
-      out.write("              <li><a class=\"dropdown-item\" href=\"#\">Anotar repuesto</a></li>\n");
+      out.write("              <li><a class=\"dropdown-item\" href=\"../Controlador?accion=AsociarM\" target=\"myFrame\">Asignar mecánico</a></li>\n");
+      out.write("              <li><a class=\"dropdown-item\" href=\"../Controlador?accion=AnotarR\" target=\"myFrame\">Anotar repuesto</a></li>\n");
       out.write("               <li><a class=\"dropdown-item\" href=\"#\">Anotar mano de obra</a></li>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");

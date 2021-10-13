@@ -9,20 +9,19 @@ package Modelo;
  *
  * @author richa
  */
-public class Repuesto_Reparacion {
-    
-    private int codigoRepuesto;
+public class ManoReparacion {
+    private int codigoObra;
     private int idReparacion;
 
-    public Repuesto_Reparacion() {
+    public ManoReparacion() {
     }
 
-    public int getCodigoRepuesto() {
-        return codigoRepuesto;
+    public int getCodigoObra() {
+        return codigoObra;
     }
 
-    public void setCodigoRepuesto(int codigoRepuesto) {
-        this.codigoRepuesto = codigoRepuesto;
+    public void setCodigoObra(int codigoObra) {
+        this.codigoObra = codigoObra;
     }
 
     public int getIdReparacion() {
